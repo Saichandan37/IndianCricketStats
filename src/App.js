@@ -1,24 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+
+import Typography from "@mui/material/Typography";
+
+import SearchBar from "./SearchBar";
+import OdiPlayerList from "./OdiPlayerList";
+import { useState } from "react";
+import { Button } from "@mui/material";
 
 function App() {
+  const [isOpen, setisOpen] = useState(true);
+  function handleSearch() {
+    setisOpen(false);
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <div className="upperStyling">
+        <Typography variant="h3" color="success">
+          Indian Cricket Players
+        </Typography>
+      </div>
+      <div className="searchbar">
+        <SearchBar handleSearch={handleSearch} />
+      </div>
+      <div className="buttonStyle">
+        <Button onClick={() => setisOpen(!isOpen)}> Toggle Show Players</Button>
+      </div>
+      {isOpen && <OdiPlayerList />}
+    </>
   );
 }
 
