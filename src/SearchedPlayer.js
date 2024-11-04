@@ -1,6 +1,6 @@
 import React from "react";
 import { data } from "./AllOdiPlayers";
-import { Paper } from "@mui/material";
+import { Fab, Paper } from "@mui/material";
 import Grid from "@mui/material/Grid";
 import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
@@ -41,8 +41,11 @@ const SearchedPlayer = (props) => {
               </Typography>
               <Accordion>
                 <AccordionSummary
-                  expandIcon={<ArrowDownwardIcon />}
-                  aria-controls="panel1-content"
+                  expandIcon={
+                    <Fab color="primary" aria-label="add">
+                      <ArrowDownwardIcon />
+                    </Fab>
+                  }
                   id="panel1-header"
                 >
                   <Typography variant="h8" color="info">
@@ -52,11 +55,13 @@ const SearchedPlayer = (props) => {
                 </AccordionSummary>
                 <AccordionDetails>
                   <Typography>
-                    Inndings: {player.Inn}
-                    Not Outs: {player.NO}
-                    Runs:{player.Runs}
-                    HighScore:{player.HS}
-                    Avg:{player.Avg}
+                    <Typography sx={{ marginRight: 2 }}>
+                      Inndings: {player.Inn}
+                    </Typography>
+                    <Typography>Not Outs: {player.NO}</Typography>
+                    <Typography>Runs:{player.Runs}</Typography>
+                    <Typography>HighScore:{player.HS}</Typography>
+                    <Typography>Avg:{player.Avg}</Typography>
                   </Typography>
                 </AccordionDetails>
               </Accordion>

@@ -18,7 +18,6 @@ export const data = [
     BowlAvg: 26.71,
     Ca: 0,
     St: 0,
-    image: null, // No image available
   },
   {
     No: 2,
@@ -39,7 +38,6 @@ export const data = [
     BowlAvg: 48.57,
     Ca: 4,
     St: 0,
-    image: null, // No image available
   },
   {
     No: 3,
@@ -60,8 +58,6 @@ export const data = [
     BowlAvg: 0,
     Ca: 3,
     St: 1,
-    image:
-      "https://upload.wikimedia.org/wikipedia/commons/a/a2/Farokh_Engineer.JPG",
   },
   {
     No: 4,
@@ -82,8 +78,6 @@ export const data = [
     BowlAvg: 25,
     Ca: 22,
     St: 0,
-    image:
-      "https://upload.wikimedia.org/wikipedia/commons/7/7b/Sunil_Gavaskar.jpg",
   },
   {
     No: 5,
@@ -104,7 +98,6 @@ export const data = [
     BowlAvg: 29.27,
     Ca: 18,
     St: 0,
-    image: "https://upload.wikimedia.org/wikipedia/commons/8/8c/Madan_Lal.jpg",
   },
   {
     No: 6,
@@ -125,7 +118,6 @@ export const data = [
     BowlAvg: 0,
     Ca: 0,
     St: 0,
-    image: null, // No image available
   },
   {
     No: 7,
@@ -146,8 +138,6 @@ export const data = [
     BowlAvg: 0,
     Ca: 1,
     St: 0,
-    image:
-      "https://upload.wikimedia.org/wikipedia/commons/e/ef/Brijesh_Patel.jpg",
   },
   {
     No: 8,
@@ -168,8 +158,6 @@ export const data = [
     BowlAvg: 42.25,
     Ca: 2,
     St: 0,
-    image:
-      "https://upload.wikimedia.org/wikipedia/en/e/e1/Eknath_Solkar_1974.jpg",
   },
   {
     No: 9,
@@ -190,8 +178,6 @@ export const data = [
     BowlAvg: 108.4,
     Ca: 4,
     St: 0,
-    image:
-      "https://upload.wikimedia.org/wikipedia/commons/f/f1/Srinivasaraghavan_Venkataraghavan.jpg",
   },
   {
     No: 10,
@@ -212,8 +198,6 @@ export const data = [
     BowlAvg: 0,
     Ca: 3,
     St: 0,
-    image:
-      "https://upload.wikimedia.org/wikipedia/commons/4/49/Gundappa_Viswanath.jpg",
   },
   {
     No: 11,
@@ -234,8 +218,6 @@ export const data = [
     BowlAvg: 0,
     Ca: 1,
     St: 0,
-    image:
-      "https://upload.wikimedia.org/wikipedia/commons/1/13/Ajit_Wadekar_%28cropped%29.jpg",
   },
   {
     No: 12,

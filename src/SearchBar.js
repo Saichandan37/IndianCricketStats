@@ -3,12 +3,15 @@ import Autocomplete from "@mui/material/Autocomplete";
 import TextField from "@mui/material/TextField";
 import { data } from "./AllOdiPlayers";
 import { Typography } from "@mui/material";
-import { Paper } from "@mui/material";
 import Grid from "@mui/material/Grid";
 import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
 import Accordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
+import SportsCricketIcon from "@mui/icons-material/SportsCricket";
+import SportsBaseballIcon from "@mui/icons-material/SportsBaseball";
+import DryIcon from "@mui/icons-material/Dry";
+import { Button, Chip, Fab, Paper, Stack } from "@mui/material";
 
 const SearchBar = (props) => {
   const [value, setValue] = useState("");
@@ -19,7 +22,6 @@ const SearchBar = (props) => {
   const handleInputChange = (event, value) => {
     setInputValue(value);
 
-    // Filter the options manually based on input
     const filtered = item.filter((option) =>
       option.label.toLowerCase().includes(value.toLowerCase())
     );
@@ -109,69 +111,170 @@ const SearchBar = (props) => {
           </Grid>
           <div className="flex-containerL">
             {filteredOptions.map((player) => (
-              <p1 key={player.No} className=" card ">
+              <p1 className=" card ">
                 <Paper elevation={15}>
                   <div className="sub_title flex-itemsL">
                     <Typography variant="h6" color="primary">
-                      {player.Name}
+                      {player.label}
                     </Typography>
                   </div>
-                  <Typography variant="h7" color="secondary">
-                    {player.First}-{player.Last} Matches: {player.Mat}
-                  </Typography>
+                  <Stack direction="row">
+                    <Typography
+                      sx={{ marginLeft: 8, marginRight: 3, color: "#ff0000" }}
+                      fontSize={13}
+                    >
+                      {player.First}-{player.Last}
+                    </Typography>
+                    <Typography
+                      sx={{ marginLeft: 3, color: "#ff0000" }}
+                      fontSize={13}
+                    >
+                      Matches: {player.Mat}
+                    </Typography>
+                  </Stack>
+
                   <Accordion>
                     <AccordionSummary
-                      expandIcon={<ArrowDownwardIcon />}
+                      expandIcon={
+                        <Fab size="small" color="warning">
+                          <ArrowDownwardIcon />
+                        </Fab>
+                      }
                       aria-controls="panel1-content"
                       id="panel1-header"
                     >
-                      <Typography variant="h8" color="info">
-                        {" "}
-                        Batting Stats
-                      </Typography>
+                      <Button
+                        endIcon={<SportsCricketIcon size="large" />}
+                        size="small"
+                      >
+                        <Typography variant="h8" color="info">
+                          {" "}
+                          Batting Stats
+                        </Typography>
+                      </Button>
+                    </AccordionSummary>
+                    <AccordionDetails>
+                      <Chip
+                        color="success"
+                        variant="outlined"
+                        label={`Inndings: ${player.Inn}`}
+                        sx={{ m: 0.2 }}
+                      />
+                      <Chip
+                        color="success"
+                        variant="outlined"
+                        label={`Not Outs: ${player.NO}`}
+                        sx={{ m: 0.2 }}
+                      />
+                      <Chip
+                        color="success"
+                        variant="outlined"
+                        label={`Runs:${player.Runs}`}
+                        sx={{ m: 0.2 }}
+                      />
+                      <Chip
+                        color="success"
+                        variant="outlined"
+                        label={`HighScore:${player.HS}`}
+                        sx={{ m: 0.2 }}
+                      />
+
+                      <Chip
+                        color="success"
+                        variant="outlined"
+                        label={`Avg:${player.Avg}`}
+                        sx={{ m: 0.2 }}
+                      />
+                    </AccordionDetails>
+                  </Accordion>
+
+                  <Accordion>
+                    <AccordionSummary
+                      expandIcon={
+                        <Fab size="small" color="warning">
+                          <ArrowDownwardIcon />
+                        </Fab>
+                      }
+                      aria-controls="panel1-content"
+                      id="panel1-header"
+                    >
+                      <Button
+                        endIcon={<SportsBaseballIcon size="small" />}
+                        size="small"
+                      >
+                        <Typography variant="h8" color="info">
+                          {" "}
+                          Bowling Stats
+                        </Typography>
+                      </Button>
                     </AccordionSummary>
                     <AccordionDetails>
                       <Typography>
-                        Inndings: {player.Inn}
-                        Not Outs: {player.NO}
-                        Runs:{player.Runs}
-                        HighScore:{player.HS}
-                        Avg:{player.Avg}
+                        <Chip
+                          color="success"
+                          variant="outlined"
+                          label={`Balls: ${player.Balls}`}
+                          sx={{ m: 0.2 }}
+                        />
+                        <Chip
+                          color="success"
+                          variant="outlined"
+                          label={`Medin Overs:${player.Mdn}`}
+                          sx={{ m: 0.2 }}
+                        />
+                        <Chip
+                          color="success"
+                          variant="outlined"
+                          label={`Wickets:${player.Wkt}`}
+                          sx={{ m: 0.2 }}
+                        />
+                        <Chip
+                          color="success"
+                          variant="outlined"
+                          label={`Runs:${player.BowlRuns}`}
+                          sx={{ m: 0.2 }}
+                        />
+                        <Chip
+                          color="success"
+                          variant="outlined"
+                          label={`Avg:${player.BowlAvg}`}
+                          sx={{ m: 0.2 }}
+                        />
                       </Typography>
                     </AccordionDetails>
                   </Accordion>
 
                   <Accordion>
                     <AccordionSummary
-                      expandIcon={<ArrowDownwardIcon />}
+                      expandIcon={
+                        <Fab size="small" color="warning">
+                          <ArrowDownwardIcon />
+                        </Fab>
+                      }
                       aria-controls="panel1-content"
                       id="panel1-header"
                     >
-                      <Typography color="info"> Bowling Stats</Typography>
+                      <Button endIcon={<DryIcon size="small" />} size="small">
+                        <Typography variant="h8" color="info">
+                          {" "}
+                          Feilding Stats
+                        </Typography>
+                      </Button>
                     </AccordionSummary>
                     <AccordionDetails>
                       <Typography>
-                        Balls: {player.Balls}
-                        Medin Overs:{player.Mdn}
-                        Wickets:{player.Wkt}
-                        Runs:{player.BowlRuns}
-                        Avg:{player.BowlAvg}
-                      </Typography>
-                    </AccordionDetails>
-                  </Accordion>
-
-                  <Accordion>
-                    <AccordionSummary
-                      expandIcon={<ArrowDownwardIcon />}
-                      aria-controls="panel1-content"
-                      id="panel1-header"
-                    >
-                      <Typography color="info"> Feilding Stats</Typography>
-                    </AccordionSummary>
-                    <AccordionDetails>
-                      <Typography>
-                        Catches: {player.Ca}
-                        Stumpings:{player.St}
+                        <Chip
+                          color="success"
+                          variant="outlined"
+                          label={`Catches: ${player.Ca}`}
+                          sx={{ m: 0.2 }}
+                        />
+                        <Chip
+                          color="success"
+                          variant="outlined"
+                          label={`Stumpings:${player.St}`}
+                          sx={{ m: 0.2 }}
+                        />
                       </Typography>
                     </AccordionDetails>
                   </Accordion>
